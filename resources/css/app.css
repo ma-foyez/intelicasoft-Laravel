@@ -1,26 +1,138 @@
-@import url("https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap")
-layer(base);
+@import url("https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap");
 
 @import "tailwindcss";
 
-/* Import base styles */
-@import "./base.css";
+@theme {
+  --color-intelica-25: #f0fbff;
+  --color-intelica-50: #e0f7ff;
+  --color-intelica-100: #b3ecff;
+  --color-intelica-200: #80dfff;
+  --color-intelica-300: #4dd2ff;
+  --color-intelica-400: #1ac5ff;
+  --color-intelica-500: #00b4ff;
+  --color-intelica-600: #00a3e6;
+  --color-intelica-700: #0092cc;
+  --color-intelica-800: #0081b3;
+  --color-intelica-900: #006f99;
+  --color-intelica-950: #005c80;
 
-/* Import sidebar styles */
-@import "./sidebar.css";
+  --color-accent-25: #f0fff4;
+  --color-accent-50: #e0ffe9;
+  --color-accent-100: #b3ffd1;
+  --color-accent-200: #80ffb8;
+  --color-accent-300: #4dff9f;
+  --color-accent-400: #1aff87;
+  --color-accent-500: #00ff88;
+  --color-accent-600: #00e677;
+  --color-accent-700: #00cc66;
+  --color-accent-800: #00b355;
+  --color-accent-900: #009944;
+  --color-accent-950: #008033;
 
-/* Import utility styles */
-@import "./utilities.css";
+  --font-family-sans: 'Outfit', ui-sans-serif, system-ui, sans-serif;
+}
 
-/* Import component styles */
-@import "./components.css";
+/* Import AOS (Animate On Scroll) */
+@import "aos/dist/aos.css";
 
-/* Import third-party library styles */
-@import "./third-party.css";
+/* Basic body styling */
+body {
+    position: relative;
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+    font-weight: 400;
+    background-color: #f9fafb;
+    color: #374151;
+    z-index: 1;
+    font-family: 'Outfit', ui-sans-serif, system-ui, sans-serif;
+}
 
-@plugin 'tailwindcss-animate';
-@source '../views';
-@source '../../vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php';
+.dark body {
+    background-color: #111827;
+    color: #d1d5db;
+}
+
+/* Custom Intelica Soft Classes */
+.intelica-gradient-bg {
+    background: linear-gradient(135deg, #00b4ff 0%, #00ff88 100%);
+}
+
+.intelica-gradient-text {
+    background: linear-gradient(135deg, #00b4ff 0%, #00ff88 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.accent-gradient-bg {
+    background: linear-gradient(135deg, #00ff88 0%, #00b4ff 100%);
+}
+
+.intelica-dark-bg {
+    background: linear-gradient(135deg, #0a0a0a 0%, #1a1a2e 50%, #16213e 100%);
+}
+
+.intelica-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 2rem;
+}
+
+.intelica-feature-card {
+    padding: 1.5rem;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 0.75rem;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(10px);
+}
+
+.intelica-icon-glow {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 3rem;
+    height: 3rem;
+    border-radius: 0.75rem;
+    box-shadow: 0 0 20px rgba(0, 180, 255, 0.3);
+}
+
+.intelica-status-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: #00ff88;
+    animation: pulse 2s infinite;
+}
+
+/* Animations */
+@keyframes float {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-20px); }
+}
+
+@keyframes pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.5; }
+}
+
+.animate-float {
+    animation: float 6s ease-in-out infinite;
+}
+
+/* Prevent FOUC and layout shifts */
+[x-cloak] {
+    display: none !important;
+}
+
+/* Smooth fade-in animation for the main content */
+.app-container {
+    opacity: 0;
+    transition: opacity 0.2s ease-in;
+}
+
+.app-container.loaded {
+    opacity: 1;
+}
 
 /* Smooth fade-in animation for the main content */
 .app-container {

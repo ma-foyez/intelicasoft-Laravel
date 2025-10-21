@@ -186,4 +186,127 @@
     .table-td-checkbox {
         @apply p-2 px-5;
     }
+
+    /* Intelica Soft Custom Components */
+    .intelica-card {
+        @apply bg-white dark:bg-gray-900 rounded-xl border border-gray-200 dark:border-gray-700 shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden;
+    }
+
+    .intelica-card-gradient {
+        @apply bg-gradient-to-br from-intelica-500/10 to-accent-500/10 backdrop-blur-sm border border-intelica-200/30 dark:border-intelica-700/30 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300;
+    }
+
+    .intelica-btn-primary {
+        @apply bg-gradient-to-r from-intelica-500 to-intelica-600 hover:from-intelica-600 hover:to-intelica-700 text-white font-medium px-6 py-3 rounded-lg shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300 focus:ring-4 focus:ring-intelica-300;
+    }
+
+    .intelica-btn-secondary {
+        @apply bg-gradient-to-r from-accent-500 to-accent-600 hover:from-accent-600 hover:to-accent-700 text-white font-medium px-6 py-3 rounded-lg shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300 focus:ring-4 focus:ring-accent-300;
+    }
+
+    .intelica-btn-outline {
+        @apply border-2 border-intelica-500 text-intelica-500 hover:bg-intelica-500 hover:text-white font-medium px-6 py-3 rounded-lg transition-all duration-300 focus:ring-4 focus:ring-intelica-300;
+    }
+
+    .intelica-gradient-text {
+        @apply bg-gradient-to-r from-intelica-500 to-accent-500 bg-clip-text text-transparent font-bold;
+    }
+
+    .intelica-floating-orb {
+        @apply absolute rounded-full blur-3xl opacity-30 pointer-events-none animate-pulse;
+    }
+
+    .intelica-feature-card {
+        @apply bg-intelica-500/10 border-2 border-intelica-200/20 rounded-2xl p-6 transition-all duration-300 hover:border-intelica-500/50 hover:shadow-lg hover:shadow-intelica-500/20 hover:-translate-y-2 group cursor-pointer;
+    }
+
+    .intelica-icon-glow {
+        @apply text-intelica-500 bg-intelica-500/10 p-4 rounded-2xl shadow-lg group-hover:shadow-intelica-500/40 transition-all duration-300;
+    }
+
+    .intelica-status-dot {
+        @apply w-3 h-3 rounded-full bg-accent-500 shadow-lg animate-pulse;
+        box-shadow: 0 0 20px theme('colors.accent.500');
+    }
+
+    .intelica-dark-bg {
+        @apply bg-gradient-to-br from-dark-900 via-dark-500 to-dark-900;
+    }
+
+    .intelica-glass-effect {
+        @apply bg-white/10 backdrop-blur-md border border-white/20 rounded-xl;
+    }
+
+    /* Animation Classes */
+    .animate-float {
+        animation: float 6s ease-in-out infinite;
+    }
+
+    .animate-glow {
+        animation: glow 2s ease-in-out infinite alternate;
+    }
+
+    .animate-slide-up {
+        animation: slideUp 0.8s ease-out;
+    }
+
+    .animate-fade-in {
+        animation: fadeIn 0.6s ease-out;
+    }
+
+    .animate-scale-in {
+        animation: scaleIn 0.5s ease-out;
+    }
+
+    /* Keyframe Animations */
+    @keyframes float {
+        0%, 100% { transform: translateY(0px) rotate(0deg); }
+        33% { transform: translateY(-10px) rotate(1deg); }
+        66% { transform: translateY(5px) rotate(-1deg); }
+    }
+
+    @keyframes glow {
+        0% { box-shadow: 0 0 20px theme('colors.intelica.500/50'); }
+        100% { box-shadow: 0 0 30px theme('colors.intelica.500'), 0 0 40px theme('colors.intelica.500/50'); }
+    }
+
+    @keyframes slideUp {
+        from {
+            opacity: 0;
+            transform: translateY(30px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    @keyframes fadeIn {
+        from { opacity: 0; }
+        to { opacity: 1; }
+    }
+
+    @keyframes scaleIn {
+        from {
+            opacity: 0;
+            transform: scale(0.8);
+        }
+        to {
+            opacity: 1;
+            transform: scale(1);
+        }
+    }
+
+    /* Responsive Grid System */
+    .intelica-grid {
+        @apply grid gap-6 grid-cols-1 md:grid-cols-2 lg:grid-cols-3;
+    }
+
+    .intelica-grid-2 {
+        @apply grid gap-6 grid-cols-1 lg:grid-cols-2;
+    }
+
+    .intelica-grid-4 {
+        @apply grid gap-6 grid-cols-1 sm:grid-cols-2 lg:grid-cols-4;
+    }
 }

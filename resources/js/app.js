@@ -1,4 +1,5 @@
 import './bootstrap';
+import './intelica-theme.js';
 import 'iconify-icon/dist/iconify-icon.min.js';
 import "jsvectormap/dist/jsvectormap.min.css";
 import "flatpickr/dist/flatpickr.min.css";

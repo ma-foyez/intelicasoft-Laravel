@@ -37,21 +37,55 @@
     --color-body: #f3f3f9;
     --color-white: #ffffff;
     --color-black: #101828;
-    --color-primary: #635bff;
-    --color-secondary: #1f2937;
+    /* Intelica Soft Theme Colors - Based on Under Construction Page */
+    --color-primary: #00b4ff;
+    --color-secondary: #00ff88;
+    --color-accent: #0a0f1e;
+    --color-dark-bg: #0a0f1e;
+    --color-dark-secondary: #1a1f3a;
+    --color-dark-tertiary: #0f0a1e;
 
-    --color-brand-25: #f2f7ff;
-    --color-brand-50: #fefeff;
-    --color-brand-100: #e9ecff;
-    --color-brand-200: #c0c9ff;
-    --color-brand-300: #98a6ff;
-    --color-brand-400: #6f82ff;
-    --color-brand-500: #465fff;
-    --color-brand-600: #0e2eff;
-    --color-brand-700: #001dd5;
-    --color-brand-800: #001dd5;
-    --color-brand-900: #000e65;
-    --color-brand-950: #000a49;
+    /* Primary Blue Palette */
+    --color-intelica-25: #f0fbff;
+    --color-intelica-50: #e0f7ff;
+    --color-intelica-100: #b8ecff;
+    --color-intelica-200: #7dd3ff;
+    --color-intelica-300: #42baff;
+    --color-intelica-400: #1aa3ff;
+    --color-intelica-500: #00b4ff;
+    --color-intelica-600: #0090cc;
+    --color-intelica-700: #006b99;
+    --color-intelica-800: #004766;
+    --color-intelica-900: #002333;
+    --color-intelica-950: #001119;
+
+    /* Secondary Green Palette */
+    --color-accent-25: #f0fff6;
+    --color-accent-50: #e0ffec;
+    --color-accent-100: #b8ffd4;
+    --color-accent-200: #7dffb8;
+    --color-accent-300: #42ff9c;
+    --color-accent-400: #1aff94;
+    --color-accent-500: #00ff88;
+    --color-accent-600: #00cc6d;
+    --color-accent-700: #009952;
+    --color-accent-800: #006637;
+    --color-accent-900: #00331c;
+    --color-accent-950: #00190e;
+
+    /* Dark Theme Palette */
+    --color-dark-25: #f5f5f7;
+    --color-dark-50: #ebebef;
+    --color-dark-100: #d1d1d9;
+    --color-dark-200: #a3a3b3;
+    --color-dark-300: #75758d;
+    --color-dark-400: #474767;
+    --color-dark-500: #1a1f3a;
+    --color-dark-600: #15192e;
+    --color-dark-700: #101323;
+    --color-dark-800: #0c0e1a;
+    --color-dark-900: #0a0f1e;
+    --color-dark-950: #050712;
 
     --color-blue-light-25: #f5fbff;
     --color-blue-light-50: #f0f9ff;
@@ -194,7 +228,19 @@
     }
 
     body {
-        @apply relative text-base font-normal z-1 bg-gray-50 text-gray-700 dark:text-gray-300;
+        position: relative;
+        font-size: 0.875rem;
+        line-height: 1.25rem;
+        font-weight: 400;
+        background-color: #f9fafb;
+        color: #374151;
+        z-index: 1;
+        font-family: 'Outfit', ui-sans-serif, system-ui, sans-serif;
+    }
+
+    .dark body {
+        background-color: #111827;
+        color: #d1d5db;
     }
 
     /* Prevent FOUC and layout shifts */
